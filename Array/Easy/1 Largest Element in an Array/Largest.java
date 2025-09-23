@@ -10,6 +10,7 @@ public class Largest{
         for(int i=0;i<n;i++){
             ar[i] = sc.nextInt();
         }
+        sc.close();
         int max = Integer.MIN_VALUE;
         for(int i: ar){
             max = Math.max(max,i);
