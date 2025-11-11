@@ -1,0 +1,10 @@
+public class recursion{
+    public static void main(String args[]){
+        int n = 6;
+        System.out.println(fib(n)); 
+    }
+    public static int fib(int n){
+        if(n<=1){
+            return n;
+        }
+        System
