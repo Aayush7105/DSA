@@ -45,31 +45,39 @@ class TreeNode {
         PostOrder(root.right);
         System.err.println(root.val);
     }
-    // public static List<List<Integer>> LevelOrder (TreeNode root){
-    // List<List<Integer>> result = new ArrayList<>();
-    // if(root == null ) return result;
-    // Queue<Integer> q = new LinkedList<>();
-    // q.add(root.val);
-    // while(!q.isEmpty()){
-    // int size = q.size();
-    // List<Integer> level = new ArrayList<>();
-    // for(int i = 0;i<size;i++){
-    // int x =q.poll();
-    // TreeNode node = new TreeNode(x);
-    // level.add(node.val);
-    // if(root.left != null) q.add(root.left.val);
-    // if(root.right != null) q.add(root.right.val);
-    // }
-    // result.add(level);
-    // }
-    // return result;
-    // }
-    // public static int height (TreeNode root){
-    // if(root == null) return 0;
-    // return Math.max(height(root.left),height(root.right)+1);
-    // }
-    // public static int count (TreeNode root){
-    // if(root==null) return 0;
-    // return(count(root.left)+count(root.right)+1);
-    // }
+
+    public static List<List<Integer>> LevelOrder(TreeNode root) {
+        List<List<Integer>> result = new ArrayList<>();
+        if (root == null)
+            return result;
+        Queue<Integer> q = new LinkedList<>();
+        q.add(root.val);
+        while (!q.isEmpty()) {
+            int size = q.size();
+            List<Integer> level = new ArrayList<>();
+            for (int i = 0; i < size; i++) {
+                int x = q.poll();
+                TreeNode node = new TreeNode(x);
+                level.add(node.val);
+                if (root.left != null)
+                    q.add(root.left.val);
+                if (root.right != null)
+                    q.add(root.right.val);
+            }
+            result.add(level);
+        }
+        return result;
+    }
+
+    public static int height(TreeNode root) {
+        if (root == null)
+            return 0;
+        return Math.max(height(root.left), height(root.right) + 1);
+    }
+
+    public static int count(TreeNode root) {
+        if (root == null)
+            return 0;
+        return (count(root.left) + count(root.right) + 1);
+    }
 }
