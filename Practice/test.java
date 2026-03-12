@@ -4,18 +4,16 @@ class test {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         String s = sc.nextLine();
-        System.out.println(reverse(s));
-
+        int k = sc.nextInt();
+        System.out.println(cipher(s,k));
     }
-
-    public static String reverse(String s) {
-
-        String x = "";
-        for (int i = s.length() - 1; i >= 0; i--) {
-            x += s.charAt(i);
-
+    public static String cipher (String s, int k){
+        StringBuilder  result = new StringBuilder();
+        for(int i=0;i<s.length();i++){
+            int index = (i + k) % s.length();
+            result.append(Character.toLowerCase(s.charAt(index)));
         }
-        return x;
+        return result.toString();
     }
 
 }
