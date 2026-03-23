@@ -1,4 +1,3 @@
-package Practice.Greedy;
 
 import java.util.*;
 
